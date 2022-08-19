@@ -139,8 +139,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   let arr = str.split('');
-  return arr.reduce((revString, char) => {
-    return char + revString;
+  return arr.reduce((reversal, char) => {
+    return char + reversal;
   }, '');
 
 };
