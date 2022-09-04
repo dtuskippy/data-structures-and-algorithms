@@ -148,10 +148,21 @@ For example:
 hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
-
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
 
+	let hasChildren = false;
+
+	arr.forEach((person, index) => {
+
+
+	if(person.name === character) {
+
+	const values = Object.values(person);
+	return values.some(v => Array.isArray(v) ? hasChildren = true : false);
+	}
+      })
+
+	return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
