@@ -23,3 +23,7 @@ To run your tests
 ## Array-reverse (Code Challenge 01)
 
 ![Array-reverse](images/array-reverse.png)
+
+## Array-insert-shift (Code Challenge 02)
+
+![Array-insert-shift](images/array-insert-shift.png)
