@@ -27,3 +27,7 @@ To run your tests
 ## Array-insert-shift (Code Challenge 02)
 
 ![Array-insert-shift](images/array-insert-shift.png)
+
+## Array-binary-search (Code Challenge 03)
+
+![Array-binary-search](images/array-binary-search.png)
