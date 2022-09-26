@@ -14,7 +14,7 @@ module.exports = LinkedList;
 
 // Within your Linked List class, include a head property.
 // Upon instantiation, an empty Linked List should be created.
-
+// insertions
 // The class should contain the following methods
 
 // insert
