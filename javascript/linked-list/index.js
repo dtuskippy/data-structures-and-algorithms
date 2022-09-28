@@ -1,15 +1,78 @@
 'use strict';
 
+class Node {
+  constructor(value){
+    this.value = value;
+    this.next = null;
+  }
+}
+
 class LinkedList {
   constructor() {
-    // code
+    this.head = null;
   }
 
-  methodName() {
-    // code
+  insert(value) {
+    let node = new Node(value);
+    node.next = this.head;
+    this.head = node;
+
   }
+
+  includes(value) {
+
+    // let result = false;
+
+    let current = this.head;
+    while(current){
+      if(current.value === value) {
+        return true;
+      }
+
+      current = current.next;
+    }
+    return false;
+
+    // return result;
+  }
+
+  toString() {
+    let string = '';
+
+    let current = this.head;
+    while(current){
+      string += `{ ${current.value} } -> `;
+      current = current.next;
+    }
+
+    string += 'NULL';
+
+    return string;
+  }
+
 
 }
+
+
+let list = new LinkedList();
+console.log('empty list', list);
+
+list.insert(1);
+list.insert(2);
+list.insert(3);
+list.insert(4);
+list.insert(5);
+list.insert(6);
+
+console.log('populated list', list);
+
+let includes = list.includes(2);
+console.log('includes test', includes);
+
+console.log('To string', list.toString());
+
+
+
 module.exports = LinkedList;
 
 // Within your Linked List class, include a head property.
