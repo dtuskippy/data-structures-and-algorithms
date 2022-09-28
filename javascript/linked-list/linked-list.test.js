@@ -1,7 +1,7 @@
 'use strict';
 
 // Require our linked list implementation
-const LinkedList = require('../index');
+const LinkedList = require('./index');
 
 describe('Linked List', () => {
   // it('works', () => {
@@ -11,7 +11,7 @@ describe('Linked List', () => {
     let list = new LinkedList();
     expect(list).toBeInstanceOf(LinkedList);
     expect(list.head).toBeNull();
-    expect(list.head).toBeFalsey();
+    expect(list.head).toBeFalsy();
   });
   it('Can successfully insert a node in a linked list', () => {
     let list = new LinkedList();
@@ -55,6 +55,14 @@ describe('Linked List', () => {
     expect(list.includes(42)).toEqual(false);
     expect(list.includes(66)).toEqual(false);
     expect(list.includes(102)).toEqual(false);
+  });
+  it('Returns a string string representing all the values in the Linked List, formatted as: { a } -> { b } -> { c } -> NULL', () => {
+    let list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+
+    expect(list.toString()).toEqual('{ 3 } -> { 2 } -> { 1 } -> NULL');
   });
 
 });
