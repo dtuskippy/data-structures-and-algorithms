@@ -1,12 +1,8 @@
 'use strict';
 
-// Require our linked list implementation
 const LinkedList = require('./index');
 
 describe('Linked List', () => {
-  // it('works', () => {
-  //   expect(true).toBeTruthy();
-  // });
   it('Can successfully instantiate an empty linked list', () => {
     let list = new LinkedList();
     expect(list).toBeInstanceOf(LinkedList);
@@ -74,14 +70,65 @@ describe('Linked List', () => {
     // eslint-disable-next-line quotes
     expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":{\"value\":16,\"next\":null}}}}}");
   });
+  it('Can successfully add multiple nodes to the end of the linked list', () => {
+    let list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.append(16);
+    list.append(17);
+    list.append(18);
+
+    // eslint-disable-next-line quotes
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":{\"value\":16,\"next\":{\"value\":17,\"next\":{\"value\":18,\"next\":null}}}}}}}");
+  });
+  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+    let list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insertBefore(2, 15);
+
+    // eslint-disable-next-line quotes
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":15,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":null}}}}}");
+  });
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    let list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insertBefore(3, 15);
+
+    // eslint-disable-next-line quotes
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":15,\"next\":{\"value\":3,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":null}}}}}");
+  });
+  it('Can successfully insert a node after a node located in the middle of a linked list', () => {
+    let list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insertAfter(2, 15);
+
+    // eslint-disable-next-line quotes
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":2,\"next\":{\"value\":15,\"next\":{\"value\":1,\"next\":null}}}}}");
+  });
+  it('Can successfully insert a node after the last node of a linked list', () => {
+    let list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
+    list.insertAfter(1, 15);
+
+    // eslint-disable-next-line quotes
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":{\"value\":15,\"next\":null}}}}}");
+  });
 
 });
 
 
 
-// Can successfully add a node to the end of the linked list
-// Can successfully add multiple nodes to the end of a linked list
-// Can successfully insert a node before a node located i the middle of a linked list
-// Can successfully insert a node before the first node of a linked list
-// Can successfully insert after a node in the middle of the linked list
-// Can successfully insert a node after the last node of the linked list
+
+
+
+
+
