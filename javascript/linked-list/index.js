@@ -92,6 +92,31 @@ class LinkedList {
 
   }
 
+  insertAfter(value, newValue) {
+    if(!this.head){
+      throw new Error('Linked List is Empty');
+    }
+
+    // if (this.head.value === value){
+    //   this.insert(newValue);
+    //   return;
+    // }
+
+    let current = this.head;
+
+    while(current){
+      if(current && current.value === value) {
+        let newNode = new Node(newValue);
+        newNode.next = current.next;
+        current.next = newNode;
+        current = current.next.next;
+      } else {
+        current = current.next;
+      }
+    }
+
+  }
+
 
 }
 
@@ -122,19 +147,16 @@ console.log('Append', JSON.stringify(list));
 list.insertBefore(5, 25);
 console.log('insertBefore', JSON.stringify(list));
 
+list.insertAfter(2, 33);
+console.log('insertAfter', JSON.stringify(list));
+
 
 
 
 module.exports = LinkedList;
 
 
-// append
-// arguments: new value
-// adds a new node with the given value to the end of the list
 
-// insert before
-// arguments: value, new value
-// adds a new node with the given new value immediately before the first node that has the value specified
 
 // insert after
 // arguments: value, new value
