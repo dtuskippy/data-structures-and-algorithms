@@ -87,6 +87,16 @@ describe('Linked List', () => {
     list.insert(1);
     list.insert(2);
     list.insert(3);
+    list.insertBefore(2, 15);
+
+    // eslint-disable-next-line quotes
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":15,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":null}}}}}");
+  });
+  it('Can successfully insert a node before the first node of a linked list', () => {
+    let list = new LinkedList();
+    list.insert(1);
+    list.insert(2);
+    list.insert(3);
     list.insertBefore(3, 15);
 
     // eslint-disable-next-line quotes
@@ -97,23 +107,28 @@ describe('Linked List', () => {
     list.insert(1);
     list.insert(2);
     list.insert(3);
-    list.insertAfter(3, 15);
+    list.insertAfter(2, 15);
 
     // eslint-disable-next-line quotes
-    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":15,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":null}}}}}");
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":2,\"next\":{\"value\":15,\"next\":{\"value\":1,\"next\":null}}}}}");
   });
-  it('Can successfully insert a node after a node located in the middle of a linked list', () => {
+  it('Can successfully insert a node after the last node of a linked list', () => {
     let list = new LinkedList();
     list.insert(1);
     list.insert(2);
     list.insert(3);
-    list.insertAfter(3, 15);
+    list.insertAfter(1, 15);
 
     // eslint-disable-next-line quotes
-    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":15,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":null}}}}}");
+    expect(JSON.stringify(list)).toEqual("{\"head\":{\"value\":3,\"next\":{\"value\":2,\"next\":{\"value\":1,\"next\":{\"value\":15,\"next\":null}}}}}");
   });
 
 });
+
+
+
+
+
 
 
 
