@@ -31,3 +31,7 @@ To run your tests
 ## Array-binary-search (Code Challenge 03)
 
 ![Array-binary-search](images/array-binary-search.png)
+
+## Stack-queue-pseudo (Code Challenge 11)
+
+![Stack-queue-pseudo](images/stack-queue-pseudo.png)
