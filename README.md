@@ -35,3 +35,7 @@ To run your tests
 ## Stack-queue-pseudo (Code Challenge 11)
 
 ![Stack-queue-pseudo](images/stack-queue-pseudo.png)
+
+## White Board Rubric (Code Challenge 14)
+
+![White Board Rubric -- Code Challenge 14](images/white-board-rubric-cc14.png)
