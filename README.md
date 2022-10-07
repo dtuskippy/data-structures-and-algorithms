@@ -32,10 +32,14 @@ To run your tests
 
 ![Array-binary-search](images/array-binary-search.png)
 
+## Mock Interview (Code Challenge 04)
+
+![Mock Interview -- Code Challenge 14](images/mock-interview-code-challenge-04.png)
+
 ## Stack-queue-pseudo (Code Challenge 11)
 
 ![Stack-queue-pseudo](images/stack-queue-pseudo.png)
 
-## White Board Rubric (Code Challenge 14)
+## Mock Interview (Code Challenge 14)
 
 ![White Board Rubric -- Code Challenge 14](images/white-board-rubric-cc14.png)
