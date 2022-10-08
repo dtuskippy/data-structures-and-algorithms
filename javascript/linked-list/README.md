@@ -10,21 +10,18 @@
 
 ## Code Challenge 06
 
-The class should contain the following methods:
+The class should contain the following new methods (extending on Code Challenge 05):
 
-* insert
-  * Arguments: value
-  * Returns: nothing
-  * Adds a new node with that value to the head of the list with an O(1) Time performance.
-* includes
-  * Arguments: value
-  * Returns: Boolean
-  * Indicates whether that value exists as a Node’s value somewhere within the list.
-* to string
-  * Arguments: none
-  * Returns: a string representing all the values in the Linked List, formatted as:
-  * "{ a } -> { b } -> { c } -> NULL"
+* append
+  * arguments: new value
+  * adds a new node with the given value to the end of the list
+* insert before
+  * arguments: value, new value
+  * adds a new node with the given new value immediately before the first node that has the value specified
+* insert after
+  * arguments: value, new value
+  * adds a new node with the given new value immediately after the first node that has the value specified
 
 ## Approach & Efficiency
 
-* The full coding challenge took approximately 8 hours to complete, including reading, reviewing a video, writing the actual code for methods and the testing.
+* The full coding challenge took approximately 4 hours to complete, mainly spent on writing the actual code for methods and the associated testing.
