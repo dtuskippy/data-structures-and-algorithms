@@ -65,6 +65,7 @@ class LinkedList {
     }
     current.next = newNode;
 
+
   }
 
   insertBefore(value, newValue) {
@@ -81,6 +82,27 @@ class LinkedList {
 
     while(current){
       if(current.next && current.next.value === value) {
+        let newNode = new Node(newValue);
+        newNode.next = current.next;
+        current.next = newNode;
+        current = current.next.next;
+      } else {
+        current = current.next;
+      }
+    }
+
+  }
+
+
+insertAfter(value, newValue) {
+    if(!this.head){
+      throw new Error('Linked List is Empty');
+    }
+
+    let current = this.head;
+
+    while(current){
+      if(current && current.value === value) {
         let newNode = new Node(newValue);
         newNode.next = current.next;
         current.next = newNode;
@@ -114,6 +136,17 @@ console.log('includes test', includes);
 console.log('To string', list.toString());
 
 list.append(16);
+list.append(17);
+list.append(18);
+console.log('Append', JSON.stringify(list));
+
+list.insertBefore(5, 25);
+console.log('insertBefore', JSON.stringify(list));
+
+list.insertAfter(2, 33);
+console.log('insertAfter', JSON.stringify(list));
+
+
 console.log('Append', JSON.stringify(list));
 
 list.insertBefore(5, 17);
@@ -121,13 +154,5 @@ console.log('insertBefore', JSON.stringify(list));
 
 
 
+
 module.exports = LinkedList;
-
-// insert before
-// arguments: value, new value
-// adds a new node with the given new value immediately before the first node that has the value specified
-
-
-// insert after
-// arguments: value, new value
-// adds a new node with the given new value immediately after the first node that has the value specified
