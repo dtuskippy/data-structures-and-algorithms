@@ -1,4 +1,4 @@
-# Singly Linked List -- Code Challenge 6
+# Singly Linked List -- Code Challenge 06
 
 * Node
   * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
@@ -8,9 +8,9 @@
   * Within your Linked List class, include a head property.
   * Upon instantiation, an empty Linked List should be created.
 
-## Code Challenge 6
+## Code Challenge 06
 
-The class should contain the following new methods (extending on Code Challenge 5):
+The class should contain the following new methods (extending on Code Challenge 05):
 
 * append
   * arguments: new value
