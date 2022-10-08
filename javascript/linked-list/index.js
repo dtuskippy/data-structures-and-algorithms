@@ -92,7 +92,7 @@ class LinkedList {
     }
 
   }
-  
+
 
 insertAfter(value, newValue) {
     if(!this.head){
@@ -156,5 +156,3 @@ console.log('insertBefore', JSON.stringify(list));
 
 
 module.exports = LinkedList;
-
-
