@@ -28,10 +28,10 @@ There are 3 types of brackets:
 
 ## Solution
 
-let string = '([{}])';
-let string2 = '{}{Code}[Fellows](())';
-let string3 = '[({}]';
+* let string = '([{}])';
+* let string2 = '{}{Code}[Fellows](())';
+* let string3 = '[({}]';
 
-console.log(validateBrackets(string)); // returns true
-console.log(validateBrackets(string2)); // returns true
-console.log(validateBrackets(string3)); // returns false
+* console.log(validateBrackets(string)); // returns true
+* console.log(validateBrackets(string2)); // returns true
+* console.log(validateBrackets(string3)); // returns false
