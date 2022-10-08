@@ -80,15 +80,23 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  let flatArray = input.flat();
-  let container = [];
-  for (let i = 0; i < flatArray.length; i++){
-    if(flatArray[i] % 5 === 0 && flatArray[i] !== 0) {
-      container.push(flatArray[i]);
-    }
-  }
-  return container;
+  return input.map(nestedArr => {
+    return nestedArr.filter(number => number % 5 === 0 && typeof number === 'number').map(filteredNumber => Math.pow(2, filteredNumber));
+
+  });
 };
+
+
+
+//   let flatArray = input.flat();
+//   let container = [];
+//   for (let i = 0; i < flatArray.length; i++){
+//     if(flatArray[i] % 5 === 0 && flatArray[i] !== 0) {
+//       container.push(flatArray[i]);
+//     }
+//   }
+//   return container;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -153,23 +161,37 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  let string = '';
-  for(let i = 0; i < data.length; i++) {
-    if(data[i].gender !== 'n/a') {
-       string += `${data[i].name} and `
-    }
-  }
-  return string;
+  return data.filter(personObj => personObj.gender.includes('male')).map(person => person.name).join(' and ');
 };
+
+
+
+
+
+//   let string = '';
+//   for(let i = 0; i < data.length; i++) {
+//     if(data[i].gender !== 'n/a') {
+//        string += `${data[i].name} and `
+//     }
+//   }
+//   return string;
+// };
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the character who is the shortest in height.
 ------------------------------------------------------------------------------------------------ */
 
+
+
+
 let findShortest = (data) => {
-  return data.reduce((a,b) => Math.min(a.height, b.height))
+  return data.reduce((shortestSoFar, nextCharacter) => +shortestSoFar.height < +nextCharacter.height ? shortestSoFar : nextCharacter).name;
 };
+
+
+//   return data.reduce((a,b) => Math.min(a.height, b.height))
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
