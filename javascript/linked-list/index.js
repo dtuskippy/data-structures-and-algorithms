@@ -97,11 +97,6 @@ class LinkedList {
       throw new Error('Linked List is Empty');
     }
 
-    // if (this.head.value === value){
-    //   this.insert(newValue);
-    //   return;
-    // }
-
     let current = this.head;
 
     while(current){
@@ -139,7 +134,6 @@ console.log('includes test', includes);
 console.log('To string', list.toString());
 
 list.append(16);
-list.append(16);
 list.append(17);
 list.append(18);
 console.log('Append', JSON.stringify(list));
@@ -156,8 +150,3 @@ console.log('insertAfter', JSON.stringify(list));
 module.exports = LinkedList;
 
 
-
-
-// insert after
-// arguments: value, new value
-// adds a new node with the given new value immediately after the first node that has the value specified
