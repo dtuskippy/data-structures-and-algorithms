@@ -17,8 +17,11 @@ First-in, First out Animal Shelter.
     * Return: either a dog or a cat, based on preference.
       * If pref is not "dog" or "cat" then return null.
 
-<!-- white board??? -->
+## White Board
+
+![Stack Queue Animal Shelter](images/stack-queue-animal-shelter.png)
 
 ## Approach & Efficiency
 
-<!-- * The full coding challenge took approximately 8 hours to complete, including reading, reviewing a video, writing the actual code for methods and the testing. -->
+The full coding challenge took approximately 4 hours to complete, including reading, reviewing a video, writing the actual code for methods and the testing.
+
