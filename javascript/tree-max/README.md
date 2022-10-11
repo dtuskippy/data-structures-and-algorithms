@@ -1,4 +1,4 @@
-# Stack-Queue Animal Shelter -- Code Challenge 12
+<!-- # Stack-Queue Animal Shelter -- Code Challenge 12
 
 First-in, First out Animal Shelter.
 
@@ -24,4 +24,4 @@ First-in, First out Animal Shelter.
 ## Approach & Efficiency
 
 The full coding challenge took approximately 4 hours to complete, including reading, reviewing a video, writing the actual code for methods and the testing.
-
+ -->
