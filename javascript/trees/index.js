@@ -1,5 +1,7 @@
 'use strict';
 
+const { NodeWithChildren } = require("domhandler");
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -61,6 +63,34 @@ class BinaryTree {
     traverse(this.root);
   }
 
+  sumOdd(){
+    let sum = 0;
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+
+      if(node.value % 2 === 1) sum++;
+      return sum;
+    };
+    traverse(this.root);
+  }
+
+
+
+
+  // const array = [];
+  // const traverse = (node = this.root) => {
+  //   if (node === null) {
+  //     return;
+  //   }
+  //   // console.log(node.value);
+  //   array.push(node.value);
+  //   traverse(node.left);
+  //   traverse(node.right);
+  // };
+  // traverse();
+  // return array;
+
 }
 
 let tree = new BinaryTree();
@@ -82,5 +112,9 @@ tree.inOrder();
 // expect output of 1, 8, 5, 17, 15, 10
 console.log('-----Post-order-----');
 tree.postOrder();
+
+console.log('---sumOdd---');
+tree.sumOdd();
+
 
 module.exports = { Node, BinaryTree};
