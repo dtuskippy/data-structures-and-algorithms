@@ -63,35 +63,12 @@ class BinaryTree {
     traverse(this.root);
   }
 
-  sumOdd(){
-    let sum = 0;
-    const traverse = (node) => {
-      if (node.left) traverse(node.left);
-      if (node.right) traverse(node.right);
-
-      if(node.value % 2 === 1) sum++;
-      return sum;
-    };
-    traverse(this.root);
-  }
-
-
-
-
-  // const array = [];
-  // const traverse = (node = this.root) => {
-  //   if (node === null) {
-  //     return;
-  //   }
-  //   // console.log(node.value);
-  //   array.push(node.value);
-  //   traverse(node.left);
-  //   traverse(node.right);
-  // };
-  // traverse();
-  // return array;
-
 }
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
 
 let tree = new BinaryTree();
 tree.root = new Node(10);
