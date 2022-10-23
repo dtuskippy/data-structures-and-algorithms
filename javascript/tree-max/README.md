@@ -1,27 +1,28 @@
-# Stack-Queue Animal Shelter -- Code Challenge 12
+# Tree Max -- Code Challenge 16
 
-First-in, First out Animal Shelter.
+Tree-max
 
-* Create a class called AnimalShelter which holds only dogs and cats.
-* The shelter operates using a first-in, first-out approach.
+## Feature Tasks
 
-## Code Challenge 12
+Write the following method for the Binary Tree class
 
-* Implement the following methods:
-  * enqueue
-    * Arguments: animal
-      * animal can be either a dog or a cat object.
-  * dequeue
-    * Arguments: pref
-      * pref can be either "dog" or "cat"
-    * Return: either a dog or a cat, based on preference.
-      * If pref is not "dog" or "cat" then return null.
+    * Find maximum value
+    * Arguments: none
+    * Returns: number
+    * Find the maximum value stored in the tree.
+        * You can assume that the values stored in the Binary Tree will be numeric.
 
-## White Board
 
-![Stack Queue Animal Shelter](images/stack-queue-animal-shelter.png)
+## Whiteboard Process
+
+![whiteboard](images/tree-max.png)
 
 ## Approach & Efficiency
 
-The full coding challenge took approximately 4 hours to complete, including reading, reviewing a video, writing the actual code for methods and the testing.
+* The full coding challenge took approximately 3 hours to complete, including white board, and writing the actual code for the solution and the testing.
+* Time: O(n).
+* Space: O(1).
 
+## Solution
+
+* console.log('treeMax', tree.treeMax()); // treeMax expect 17
