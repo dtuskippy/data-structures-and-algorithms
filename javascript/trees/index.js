@@ -107,13 +107,13 @@ tree.root.right.right = new Node(17);
 
 console.log('TREE', JSON.stringify(tree));
 
-// preOrder expects this order:  [10, 5, 1, 8, 15, 17]
+// preOrder expects:  [10, 5, 1, 8, 15, 17]
 console.log('preOrder', tree.preOrder());
 
-// inOrder expects this order: [1, 5, 8, 10, 15, 17]
+// inOrder expects: [1, 5, 8, 10, 15, 17]
 console.log('inOrder', tree.inOrder());
 
-// postOrder expects this order: [1, 8, 5, 17, 15, 10]
+// postOrder expects: [1, 8, 5, 17, 15, 10]
 console.log('postOrder', tree.postOrder());
 
 ///////////////////////////////////////
