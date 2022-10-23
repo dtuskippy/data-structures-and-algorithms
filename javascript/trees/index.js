@@ -1,21 +1,8 @@
-'use strict';
-
 class Node {
-  constructor(value) {
+  constructor(value){
     this.value = value;
     this.left = null;
     this.right = null;
-  }
-}
-
-class KaryNode {
-  constructor(value, k) {
-    this.value = value;
-    this.k = k;
-    // in javascript this WORKS!
-    this.children = [];
-    // other languages maybe - also, this is valid JavaScript
-    // this.children = new Array(k).fill(null);
   }
 }
 
@@ -24,61 +11,90 @@ class BinaryTree {
     this.root = null;
   }
 
-  preOrder() {  // THIS TRAVERSAL - learn to traverse like you learned linked list... MUSCLE MEMORY
+  preOrder() {
 
-    // recursive helper function
+    let arr = [];
     const traverse = (node) => {
-      // base case - DO THE THING
-      console.log(node.value);
+      arr.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
 
-      // recursive cases  ONE WAY
-      // looks left if there is left node and serves as an "eject" if no left node exists
-      if (node.left) {
-        traverse(node.left);
-      }
-
-      // looks right if there is right node and serves as an "eject" if no right node exists
-      if (node.right) {
-        traverse(node.right);
-      }
-
-      // // recursive cases  ANOTHER WAY
-      // if (node.left) traverse(node.left);
-      // if (node.right) traverse(node.right);
-    }
-
-    // start the recursive "party"
     traverse(this.root);
+    return arr;
   }
+
 
   inOrder(){
 
-    // define recursive function
+    let arr = [];
     const traverse = (node) => {
       if (node.left) traverse(node.left);
-      // do thing IN ORDER
-      console.log(node.value);
+      arr.push(node.value);
       if (node.right) traverse(node.right);
-    }
-    // get the recursive party started
+    };
+
     traverse(this.root);
+    return arr;
   }
 
   postOrder(){
 
-    // define recursive function
+    let arr = [];
     const traverse = (node) => {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
-      // do thing POST ORDER
-      console.log(node.value);
-    }
-    // get the recursive party started
+      arr.push(node.value);
+    };
+
     traverse(this.root);
+    return arr;
   }
 
-  // breadth first traversal approach
+}
 
+class BinarySearchTree extends BinaryTree {
+
+  add(value){
+    let newNode = new Node(value);
+    if(this.root === null){
+      this.root = newNode;
+      return this;
+    }
+    let current = this.root;
+    while(current){
+      if(value === current.value) return undefined;
+      if(value < current.value){
+        if(current.left === null){
+          current.left = newNode;
+          return this;
+        }
+        current = current.left;
+      } else {
+        if(current.right === null){
+          current.right = newNode;
+          return this;
+        }
+        current = current.right;
+      }
+    }
+  }
+
+  contains(value){
+    if(this.root === null) return false;
+    let current = this.root,
+      found = false;
+    while(current && !found){
+      if(value < current.value){
+        current = current.left;
+      } else if(value > current.value){
+        current = current.right;
+      } else {
+        return true;
+      }
+    }
+    return false;
+  }
 }
 
 let tree = new BinaryTree();
@@ -89,11 +105,13 @@ tree.root.left.left = new Node(1);
 tree.root.left.right = new Node(8);
 tree.root.right.right = new Node(17);
 
-// expect console logs in specific order:  10, 5, 1, 8, 15, 17
-// tree.preOrder();
+console.log('TREE', JSON.stringify(tree));
 
-// expect output of 1, 5, 8, 10, 15, 17
-// tree.inOrder();
+// preOrder expects:  [10, 5, 1, 8, 15, 17]
+console.log('preOrder', tree.preOrder());
 
-// expect output of 1, 8, 5, 17, 15, 10
-tree.postOrder();
+// inOrder expects: [1, 5, 8, 10, 15, 17]
+console.log('inOrder', tree.inOrder());
+
+// postOrder expects: [1, 8, 5, 17, 15, 10]
+console.log('postOrder', tree.postOrder());g
