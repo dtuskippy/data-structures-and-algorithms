@@ -23,5 +23,4 @@ First-in, First out Animal Shelter.
 
 ## Approach & Efficiency
 
-The full coding challenge took approximately 4 hours to complete, including reading, reviewing a video, writing the actual code for methods and the testing.
-
+The full coding challenge took approximately 4 hours to complete, including reading, reviewing a video, writing out the white board.
