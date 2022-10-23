@@ -114,20 +114,4 @@ console.log('preOrder', tree.preOrder());
 console.log('inOrder', tree.inOrder());
 
 // postOrder expects: [1, 8, 5, 17, 15, 10]
-console.log('postOrder', tree.postOrder());
-
-///////////////////////////////////////
-let bSTree = new BinarySearchTree();
-bSTree.add(10);
-bSTree.add(5);
-bSTree.add(13);
-bSTree.add(11);
-bSTree.add(2);
-bSTree.add(16);
-bSTree.add(7);
-
-console.log('binary search tree', JSON.stringify(bSTree));
-
-console.log('contains', bSTree.contains(3));
-
-module.exports = { Node, BinaryTree, BinarySearchTree };
+console.log('postOrder', tree.postOrder());g
