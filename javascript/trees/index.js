@@ -128,6 +128,6 @@ bSTree.add(7);
 
 console.log('binary search tree', JSON.stringify(bSTree));
 
-console.log('contains', bSTree.contains(3));
+console.log('contains', bSTree.contains(3)); // expects false
 
 module.exports = { Node, BinaryTree, BinarySearchTree };
