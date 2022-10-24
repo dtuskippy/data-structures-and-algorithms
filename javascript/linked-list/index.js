@@ -156,8 +156,3 @@ console.log('insertAfter', JSON.stringify(list));
 module.exports = LinkedList;
 
 
-
-
-// insert after
-// arguments: value, new value
-// adds a new node with the given new value immediately after the first node that has the value specified
