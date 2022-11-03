@@ -1,103 +1,31 @@
 'use strict';
 
-class HashTable {
-  constructor(size=53) {
-    this.keyMap = new Array(size);
+const HashTable = require('../hash-tables');
 
-  }
+function repeatedWord(str) {
+  const ht = new HashTable();
 
-  hash(key) {
-    let total = 0;
-    let prime = 31;
-    for(let i = 0; i < Math.min(key.length, 100); i++) {
-      let char = key[i];
-      let value = char.charCodeAt(0) - 96;
-      total = (total * prime + value) % this.keyMap.length;
-    }
-    return total;
+  for (let slovo of str.split(' ')) {
+    let word = slovo.toLowerCase().replace(/\W+/gi, '');
 
-  }
-
-  set(key, value) {
-    let index = this.hash(key);
-    if(!this.keyMap[index]) {
-      this.keyMap[index] = [];
-    }
-    this.keyMap[index].push([key, value]);
-  }
-
-  get(key) {
-    let index = this.hash(key);
-    if(this.keyMap[index]) {
-      for(let i = 0; i < this.keyMap[index].length; i++) {
-        if(this.keyMap[index][i][0] === key) {
-          return this.keyMap[index][i][1];
-        }
-      }
-    }
-    return undefined;
-  }
-
-  has(key) {
-    let index = this.hash(key);
-    if(this.keyMap[index]) {
-      return true;
+    if (!ht.has(word)) {
+      ht.set(word, 1, (key, value) => value);
     } else {
-      return null;
+      return word;
     }
   }
-
-  keys() {
-    let keysArr = [];
-    for(let i = 0; i < this.keyMap.length; i++) {
-      if(this.keyMap[i]) {
-        for(let j = 0; j < this.keyMap[i].length; j++) {
-          if(!keysArr.includes(this.keyMap[i][j][0])) {
-            keysArr.push(this.keyMap[i][j][0]);
-          }
-        }
-      }
-    }
-    return keysArr;
-  }
-
-  values() {
-    let valuesArr = [];
-    for(let i = 0; i < this.keyMap.length; i++) {
-      if(this.keyMap[i]) {
-        for(let j = 0; j < this.keyMap[i].length; j++){
-          if(!valuesArr.includes(this.keyMap[i][j][1])){
-            valuesArr.push(this.keyMap[i][j][1]);
-          }
-
-        }
-
-      }
-    }
-    return valuesArr;
-  }
-
 }
 
-let ht = new HashTable(11);
-ht.set('hvezda', 'praha');
-ht.set('liberec', 'tygri');
-ht.set('brno', 'kometa');
-ht.set('plzen', 'skoda');
-ht.set('vitkovice', 'ridera');
-ht.set('chomutov', 'pirati');
-ht.set('zlin', 'berani');
-ht.set('kladno', 'rytiri');
 
 
-console.log(ht);
-console.log('get vitkovice', ht.get('vitkovice'));
-console.log('keys', ht.keys());
-console.log('values', ht.values());
-console.log('true', ht.has('zlin'));
-console.log('false', ht.has('gizmo'));
-console.log('hash', ht.hash('zbraslav'));
-console.log('hash', ht.hash('hvezda'));
-console.log('hash', ht.hash('brno'));
+let string1 = 'I went to the store to find my dog!?!';
+let string2 = 'My cats run wild through the forest and run, and run and run...';
+let string3 = 'In the morning I walked down the Boulevard to the rue Soufflot for coffee and brioche. It was a fine morning. The horse-chestnut trees in the Luxembourg gardens were in bloom. There was the pleasant early-morning feeling of a hot day. I read the papers with the coffee and then smoked a cigarette. The flower-women were coming up from the market and arranging their daily stock. Students went by going up to the law school, or down to the Sorbonne. The Boulevard was busy with trams and people going to work.';
 
-module.exports = HashTable;
+
+console.log('string1 -- expected \'to\': ', repeatedWord(string1));
+console.log('string2 -- expected \'run\':', repeatedWord(string2));
+console.log('string3: -- expected \'the\':', repeatedWord(string3));
+
+
+module.exports = repeatedWord;
