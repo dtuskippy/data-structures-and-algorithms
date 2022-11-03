@@ -1,6 +1,6 @@
 # Mock Interview -- Code Challenge 34
 
-![Code Challenge 34](images/mock-interview-code-challenge-29.png)
+![Code Challenge 34](images/mock-interview-cc-34.png)
 
 ## Reflections
 
